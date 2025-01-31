@@ -19,7 +19,9 @@ namespace NukeOneStart
             //     Console.WriteLine(name);
             // }
 
-           
+            OneStartRegistryHunter hunter = new();
+            hunter.FindAndDestroyUserRegistryKeys();
+
         }
 
     }
