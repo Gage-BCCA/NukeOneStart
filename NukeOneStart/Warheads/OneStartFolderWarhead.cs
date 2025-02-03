@@ -2,7 +2,7 @@ using NukeOneStart.Warheads.Interfaces;
 
 namespace NukeOneStart.Warheads
 {
-    public class OneStartFolderHunter: IFolderHunter
+    public class OneStartFolderWarhead: IFolderWarhead
     {
         private string _targetFolderPath = "\\AppData\\Local\\OneStart.ai";
         private string _userFolderPath = "C:\\Users\\";

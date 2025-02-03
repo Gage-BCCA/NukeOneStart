@@ -1,5 +1,4 @@
 ﻿using NukeOneStart.Warheads;
-using NukeOneStart.Warheads.Interfaces;
 
 namespace NukeOneStart
 {
@@ -8,13 +7,13 @@ namespace NukeOneStart
         
         public static void Main(string[] args)
         {
-            OneStartProcessHunter processHunter = new OneStartProcessHunter();
-            OneStartFolderHunter folderHunter = new OneStartFolderHunter();
-            OneStartRegistryHunter registryHunter = new OneStartRegistryHunter();
+            OneStartProcessWarhead processWarhead = new OneStartProcessWarhead();
+            OneStartFolderWarhead folderWarhead = new OneStartFolderWarhead();
+            OneStartRegistryWarhead registryWarhead = new OneStartRegistryWarhead();
 
-            processHunter.KillProcesses();
-            folderHunter.FindAndDestroyFolders();
-            registryHunter.FindAndDestroyUserRegistryKeys();
+            processWarhead.KillProcesses();
+            folderWarhead.FindAndDestroyFolders();
+            registryWarhead.FindAndDestroyUserRegistryKeys();
 
             Console.WriteLine("OneStart has been nuked.");
 

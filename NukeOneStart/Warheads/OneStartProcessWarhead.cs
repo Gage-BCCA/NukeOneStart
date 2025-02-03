@@ -3,7 +3,7 @@ using NukeOneStart.Warheads.Interfaces;
 
 namespace NukeOneStart.Warheads
 {
-    public class OneStartProcessHunter : IProcessHunter
+    public class OneStartProcessWarhead : IProcessWarhead
     {
 
         private string _targetProcessName = "onestart";

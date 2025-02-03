@@ -26,7 +26,7 @@ Plus, it was a fun exercise in C#.
 The bulk of the work is completed by the **Warheads**. This was a cute little naming convention, but I wanted to keep them labeled this because they can be dangerous. Some touch very sensitive portions of the Windows Operating System. 
 
 ### Documentation 
-#### ➡️ OneStartRegistryHunter
+#### ➡️ OneStartRegistryWarhead
 This class mainly accomplishes cleaning the registry as much as feasible. It kills any registry keys that are set up by OneStart in the subkeys of the Users Hive. 
 
 There are some keys in the TaskCache that the Windows Task Scheduler uses,
@@ -36,12 +36,14 @@ permissions on the Registry Hive, and modify this method or delete them by hand.
 I don't feel as if the TaskCache is a reasonable enough threat for these actions, and I have not taken them. Once you run this program, it will delete the scheduled task, but since the TaskCache is untouched, it will still appear in the Scheduled Task list.
 Not a big deal, though, as it won't actually run.
 
-#### ➡️ OneStartFolderHunter
+#### ➡️ OneStartFolderWarhead
 This class deletes all OneStart app data folders for all users, as well as any scheduled task in %SystemRoot%\System32\Tasks that includes the name "OneStart".
 
-#### ➡️ OneStartProcessHunter
+#### ➡️ OneStartProcessWarhead
 This class' job is to find and kill any OneStart processes that are currently running.
 
 ## Contact Me
-I created this and will work on this program sporadically, but this is all based on my own observations and experience with this not-so-awesome piece of software. If you have additional things that I can add (like process
+I created this and will work on this program sporadically, but this is all based on my own observations and experience with this not-so-awesome piece of software. 
+
+If you have additional things that I can add (like process
 names, files, folders, registry keys, etc), feel free to reach out and I'd be more than happy to add them.

@@ -3,7 +3,7 @@ using NukeOneStart.Warheads.Interfaces;
 
 namespace NukeOneStart.Warheads
 {
-    public class OneStartRegistryHunter: IRegistryHunter
+    public class OneStartRegistryWarhead: IRegistryWarhead
     {
         private string _targetUserRegistryKey = "\\software\\OneStart.ai";
         private string _targetScheduledTaskRegistryHive = "SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks";
