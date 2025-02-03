@@ -1,6 +1,4 @@
-﻿using System.IO;
-using System.Diagnostics;
-using NukeOneStart.Warheads;
+﻿using NukeOneStart.Warheads;
 using NukeOneStart.Warheads.Interfaces;
 
 namespace NukeOneStart
@@ -10,9 +8,9 @@ namespace NukeOneStart
         
         public static void Main(string[] args)
         {
-            IProcessHunter processHunter = new OneStartProcessHunter();
-            IFolderHunter folderHunter = new OneStartFolderHunter();
-            IRegistryHunter registryHunter = new OneStartRegistryHunter();
+            OneStartProcessHunter processHunter = new OneStartProcessHunter();
+            OneStartFolderHunter folderHunter = new OneStartFolderHunter();
+            OneStartRegistryHunter registryHunter = new OneStartRegistryHunter();
 
             processHunter.KillProcesses();
             folderHunter.FindAndDestroyFolders();
