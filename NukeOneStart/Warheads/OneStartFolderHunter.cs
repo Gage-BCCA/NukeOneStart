@@ -6,6 +6,7 @@ namespace NukeOneStart.Warheads
     {
         private string _targetFolderPath = "\\AppData\\Local\\OneStart.ai";
         private string _userFolderPath = "C:\\Users\\";
+        private string _scheduledTasksFolderPath = "C:\\Windows\\System32\\Tasks";
 
         public void FindAndDestroyFolders()
         {
@@ -27,6 +28,14 @@ namespace NukeOneStart.Warheads
                 }
             }
 
+            DirectoryInfo scheduledTasksDir = new DirectoryInfo(_scheduledTasksFolderPath);
+            foreach (FileInfo task in scheduledTasksDir.GetFiles())
+            {
+                if (task.Name.Contains("OneStart"))
+                {
+                    task.Delete();
+                }
+            }
             return;
         }
 

@@ -10,17 +10,15 @@ namespace NukeOneStart
         
         public static void Main(string[] args)
         {
-            // IProcessHunter oneStartHunter = new OneStartProcessHunter();
+            IProcessHunter processHunter = new OneStartProcessHunter();
+            IFolderHunter folderHunter = new OneStartFolderHunter();
+            IRegistryHunter registryHunter = new OneStartRegistryHunter();
 
-            // IEnumerable<string> killResults = oneStartHunter.FindAndKillProcesses();
+            processHunter.KillProcesses();
+            folderHunter.FindAndDestroyFolders();
+            registryHunter.FindAndDestroyUserRegistryKeys();
 
-            // foreach(string name in killResults)
-            // {
-            //     Console.WriteLine(name);
-            // }
-
-            OneStartRegistryHunter hunter = new();
-            hunter.FindAndDestroyUserRegistryKeys();
+            Console.WriteLine("OneStart has been nuked.");
 
         }
 

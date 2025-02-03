@@ -5,7 +5,8 @@ namespace NukeOneStart.Warheads
 {
     public class OneStartRegistryHunter: IRegistryHunter
     {
-        private string _targetRegistryKey = "\\software\\OneStart.ai";
+        private string _targetUserRegistryKey = "\\software\\OneStart.ai";
+        private string _targetScheduledTaskRegistryHive = "SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks";
 
         public void FindAndDestroyUserRegistryKeys()
         {
@@ -21,8 +22,27 @@ namespace NukeOneStart.Warheads
             foreach(string key in userKeys)
             {
                 // Todo: Handle errors instead of silently failing
-                rk.DeleteSubKeyTree(key + _targetRegistryKey, false);
+                rk.DeleteSubKeyTree(key + _targetUserRegistryKey, false);
             }
+            return;
+        }
+
+
+        public void FindAndDestroyScheduledTaskRegistryKeys()
+        {
+        /*
+
+            This function iterates the Task Scheduler cache in the registry. However, since 
+            even the built in administrator account does not have permissions to edit/delete
+            the keys, this function is not used and is not complete. 
+
+        */
+            RegistryKey rk = Registry.LocalMachine.OpenSubKey(_targetScheduledTaskRegistryHive, false);
+            foreach (string key in rk.GetSubKeyNames())
+            {
+                Console.WriteLine(key);
+            }
+            Console.ReadLine();
             return;
         }
 
